@@ -2,7 +2,9 @@ from rest_framework import serializers
 from .models import Category
 
 
-class CategorySerializer(serializers.Serializer):
+# if your viewset is inherited from ModelViewset,
+# your serializer is should also inherit ModelSerializer
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
-        field = ('name', 'description')
+        fields = ('name', 'description')
