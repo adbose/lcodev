@@ -5,7 +5,7 @@ from api.category.models import Category
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    description = models.CharField(max_length=50)
+    description = models.CharField(max_length=250)
     price = models.CharField(max_length=50)
     stock = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True, blank=True)
